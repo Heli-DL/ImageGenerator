@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { LoadingAnimation } from "../LoadingAnimation";
@@ -8,7 +8,7 @@ import "./ImgGenerator.css";
 const Home = () => {
   const [allImages, setAllImages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const postRef = collection(db, "post");
+  const postRef = useRef(collection(db, "post"));
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult]  = useState([]);
 
@@ -17,12 +17,12 @@ const Home = () => {
     if(allImages && search) {
       setSearchResult(allImages.filter((item) => item.user.toLowerCase().includes(search) || item.prompt.toLowerCase().includes(search)))
     }
-  }, [search])
+  }, [search, allImages])
 
   useEffect(()=> {
     setLoading(true);
     const getImages = async () => {
-      await getDocs(postRef)
+      await getDocs(postRef.current)
       .then(data => {
         setAllImages(data.docs.map((docs) =>({...docs.data(), id: docs.id})))
         setLoading(false);
