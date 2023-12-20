@@ -2,7 +2,7 @@ import React from 'react';
 import { auth } from '../firebaseConfig';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {signOut} from 'firebase/auth';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -24,11 +24,11 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav  ms-auto">
             <li className="nav-item">
-              <a className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} aria-current="page" href="/">Home</a>
+              <a className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} aria-current="page" href="/"><Link to="/">Home</Link></a>
             </li>
             {user && 
             <li className="nav-item">
-              <a className={`nav-link ${location.pathname === '/generate' ? 'active' : ''}`} href="/generate">Generate</a>
+              <a className={`nav-link ${location.pathname === '/generate' ? 'active' : ''}`} href="/generate"><Link to="/generate">Generate</Link></a>
             </li>
             }
             {user? 

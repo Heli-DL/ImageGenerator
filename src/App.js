@@ -8,13 +8,13 @@ import ImgGenerator from './Components/ImgGenerator';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Navbar/>
-      <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/generate' element={<ImgGenerator/>}/>
-          <Route path='/login' element={<Login/>}/>
-      </Routes>
+      <BrowserRouter basename={'/ImageGenerator'}>
+        <Navbar/>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/generate' element={<ImgGenerator/>}/>
+            <Route path='/login' element={<Login/>}/>
+        </Routes>
       </BrowserRouter>
     </div>
   );
