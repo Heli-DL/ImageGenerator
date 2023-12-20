@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ImageGenerator/static/css/main.0e3a6a8a.css",
-    "main.js": "/ImageGenerator/static/js/main.cb4317ce.js",
+    "main.js": "/ImageGenerator/static/js/main.7c973490.js",
     "static/media/flowers.png": "/ImageGenerator/static/media/flowers.4dbda892187356a96b38.png",
     "index.html": "/ImageGenerator/index.html",
     "main.0e3a6a8a.css.map": "/ImageGenerator/static/css/main.0e3a6a8a.css.map",
-    "main.cb4317ce.js.map": "/ImageGenerator/static/js/main.cb4317ce.js.map"
+    "main.7c973490.js.map": "/ImageGenerator/static/js/main.7c973490.js.map"
   },
   "entrypoints": [
     "static/css/main.0e3a6a8a.css",
-    "static/js/main.cb4317ce.js"
+    "static/js/main.7c973490.js"
   ]
 }
