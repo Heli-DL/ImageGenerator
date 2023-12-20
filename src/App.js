@@ -8,10 +8,10 @@ import ImgGenerator from './Components/ImgGenerator';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename={'/ImageGenerator'}>
+      <BrowserRouter basename='/ImageGenerator'>
         <Navbar/>
         <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route exact path='/ImageGenerator' element={<Home/>}/>
             <Route path='/generate' element={<ImgGenerator/>}/>
             <Route path='/login' element={<Login/>}/>
         </Routes>
